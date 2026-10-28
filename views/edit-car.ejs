@@ -10,13 +10,13 @@
 
     <form action="/cars/<%= car._id%>/update?_method=PUT" method="post">
          <label for="name">Name</label>
-        <input name="name" id="name" type="text">
+        <input value="<%= car.name %>" name="name" id="name" type="text">
 
         <label for="modelYear">Model Year</label>
-        <input name="modelYear" id="modelYear" type="number">
+        <input value="<%= car.modelYear%>" name="modelYear" id="modelYear" type="number">
 
         <label for="isAvailable">Is avaialble</label>
-        <input name="isAvailable" id="isAvailable" type="checkbox">
+        <input <% if (car.isAvailable) {%> checked <% } %> name="isAvailable" id="isAvailable" type="checkbox">
 
         <button> Submit Update</button>
     </form>

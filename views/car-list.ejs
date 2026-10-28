@@ -8,8 +8,13 @@
 <body>
     <%-include('./partials/navbar')%>
     <h1>Car List</h1>
+       <% if(cars.length === 0) {  %>
+     <p> No cars available at the moment , we apologize for any inconvenience.</p>
+     <a href="/cars/new">Use this link to create a new car listing</a>
+ <% } %>
+
  <% for (let oneCar of cars){ %>
-        <p>Name <%= oneCar.name %></p>
+        <p>Name: <%= oneCar.name %></p>
         <a href="/cars/<%= oneCar._id  %>"> See Car Details</a>
      <% } %>
     

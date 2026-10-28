@@ -60,11 +60,7 @@ res.render('edit-car.ejs',{car:editedCar})
 
 app.put('/cars/:carId/update', async (req,res)=>{
     req.body.isAvailable = req.body.isAvailable === 'on'
-    const updatedCar = await Car.findByIdAndUpdate(req.params.carId, {
-        name: req.body.name,
-        modelYear: req.body.modelYear,
-        isAvailable:req.body.isAvailable
-    })
+    const updatedCar = await Car.findByIdAndUpdate(req.params.carId, req.body)
     res.redirect('/cars')
 })
 
