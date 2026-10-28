@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car details</title>
+</head>
+<body>
+    <%-include('./partials/navbar')%>
+    <h1>Car Details</h1>
+
+    <p>Name: <%=car.name %></p>
+    <p>Model Year: <%= car.modelYear %></p>
+     <% if(car.isAvailable) {%>
+        <p>This car is currently available.</p>
+        <% }else{%>
+         <p>Out of Stock.</p>
+        <% } %>
+
+          <form action="/cars/<%= car._id %>/delete?_method=DELETE" method="post">
+            <button>Delete Car</button>
+        </form>
+
+        <form action="/cars/<%= car._id%>/edit" method="get">
+            <button>Update Car</button>
+        </form>
+    
+</body>
+</html>

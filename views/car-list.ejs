@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car list</title>
+</head>
+<body>
+    <%-include('./partials/navbar')%>
+    <h1>Car List</h1>
+ <% for (let oneCar of cars){ %>
+        <p>Name <%= oneCar.name %></p>
+        <a href="/cars/<%= oneCar._id  %>"> See Car Details</a>
+     <% } %>
+    
+</body>
+</html>
